@@ -358,11 +358,11 @@ namespace Wk4Ex1_CurrencyConversion
                 // Run this case if selection = 1
                 case 1:
                     // Tell the user the amount they input and what currency they chose to convert it to
-                    Console.WriteLine($"You are converting {amount:C2} to USD.");
+                    Console.WriteLine($"You are converting {amount:F2} to USD.");
                     // convert the amount to USD
                     convertedAmount = ConvertToUSD(amount, startCurrency);
                     // Output the converted value
-                    Console.WriteLine($"The converted amount is {convertedAmount:C2}.");
+                    Console.WriteLine($"The converted amount is {convertedAmount:F2}.");
 
                     // Jump out of switch here.
                     break;
@@ -371,11 +371,11 @@ namespace Wk4Ex1_CurrencyConversion
                 // Run this case if selection = 1
                 case 2:
                     // Tell the user the amount they input and what currency they chose to convert it to
-                    Console.WriteLine($"You are converting {amount:C2} to EUR.");
+                    Console.WriteLine($"You are converting {amount:F2} to EUR.");
                     // convert the amount to USD
                     convertedAmount = ConvertToEUR(amount, startCurrency);
                     // Output the converted value
-                    Console.WriteLine($"The converted amount is {convertedAmount:C2}.");
+                    Console.WriteLine($"The converted amount is {convertedAmount:F2}.");
                     
                     // Jump out of switch here.
                     break;
@@ -384,11 +384,11 @@ namespace Wk4Ex1_CurrencyConversion
                 // Run this case if selection = 1
                 case 3:
                     // Tell the user the amount they input and what currency they chose to convert it to
-                    Console.WriteLine($"You are converting {amount:C2} to JPY.");
+                    Console.WriteLine($"You are converting {amount:F2} to JPY.");
                     // convert the amount to USD
                     convertedAmount = ConvertToJPY(amount, startCurrency);
                     // Output the converted value
-                    Console.WriteLine($"The converted amount is {convertedAmount:C2}.");
+                    Console.WriteLine($"The converted amount is {convertedAmount:F2}.");
                     
                     // Jump out of switch here.
                     break;
