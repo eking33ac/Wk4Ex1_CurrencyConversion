@@ -14,7 +14,9 @@ namespace Wk4Ex1_CurrencyConversion
             // initialize return value
             double returnValue = Double.MaxValue;
 
+
             // processing
+
 
             // start of a do while loop
             do
@@ -36,6 +38,8 @@ namespace Wk4Ex1_CurrencyConversion
             }
             // loop until returnValue has a different value
             while (returnValue == Double.MaxValue);
+            
+            
             // return returnValue
             return returnValue;
         }
@@ -45,7 +49,9 @@ namespace Wk4Ex1_CurrencyConversion
             // initialize return value
             int returnValue = Int32.MaxValue;
 
+
             // processing
+
 
             // start of a do while loop
             do
@@ -66,6 +72,8 @@ namespace Wk4Ex1_CurrencyConversion
                 }
             }
             // loop until returnValue has a different value
+            
+            
             while (returnValue == Int32.MaxValue);
             // return returnValue
             return returnValue;
@@ -90,6 +98,7 @@ namespace Wk4Ex1_CurrencyConversion
                 case 1: // fromCurrency = USD ; toCurrency is USD
                     // keep USD the same
                     amount *= 1;
+                    
                     // Jump out of switch case here
                     break;
 
@@ -99,6 +108,7 @@ namespace Wk4Ex1_CurrencyConversion
                 case 2: // fromCurrency = EUR ; toCurrency is USD
                     // divide amount(EUR) by the USD-to-EUR rate
                     amount /= usdToEurRate;
+                    
                     // Jump out of switch case here
                     break;
 
@@ -108,6 +118,7 @@ namespace Wk4Ex1_CurrencyConversion
                 case 3: // fromCurrency = JPY ; toCurrency is USD
                     // divide amount(JPY) by USD-to-JPY rate
                     amount /= usdToJpyRate;
+                    
                     // Jump out of switch case here
                     break;
 
@@ -116,6 +127,7 @@ namespace Wk4Ex1_CurrencyConversion
                 default:
                     // output the error message
                     Console.WriteLine(errorMessage);
+                    
                     // Jump out of switch case here
                     break;
             }
@@ -149,6 +161,7 @@ namespace Wk4Ex1_CurrencyConversion
                 case 1: // fromCurrency = USD ; toCurrency is EUR
                     // multiply amount(USD) by USD to EUR rate
                     amount *= usdToEurRate;
+                    
                     // Jump out of switch case here
                     break;
 
@@ -158,6 +171,7 @@ namespace Wk4Ex1_CurrencyConversion
                 case 2: // fromCurrency = EUR ; toCurrency is EUR
                     // keep EUR the same
                     amount *= 1;
+                    
                     // Jump out of switch case here
                     break;
 
@@ -167,6 +181,7 @@ namespace Wk4Ex1_CurrencyConversion
                 case 3: // fromCurrency = JPY ; toCurrency is EUR
                     // divide amount(Jpy) by EUR-to-JPY rate
                     amount /= eurToJpyRate;
+                    
                     // Jump out of switch case here
                     break;
 
@@ -175,6 +190,7 @@ namespace Wk4Ex1_CurrencyConversion
                 default:
                     // output the error message
                     Console.WriteLine(errorMessage);
+                    
                     // Jump out of switch case here
                     break;
             }
@@ -198,9 +214,9 @@ namespace Wk4Ex1_CurrencyConversion
 
 
             // initialize conversion rate variables
-            double usdToEurRate = 0.96;     // declare and initialize double usdToEurRate variable to the rate 0.96
             double usdToJpyRate = 152.20;     // declare and initialize double usdToJpyRate variable to the rate 152.20
             double eurToJpyRate = 158.18;       // declare and initialize double eurToJpyRate variable to the rate 158.18
+
 
             switch (fromCurrency)
             {
@@ -209,11 +225,8 @@ namespace Wk4Ex1_CurrencyConversion
                 case 1: // fromCurrency = USD ; toCurrency is JPY
                     // first convert USD to EUR
                     // multiply amount(USD) by USD to EUR rate
-                    amount *= usdToEurRate;
+                    amount *= usdToJpyRate;
 
-                    // Then convert EUR to JPY
-                    // multiply amount(EUR) by EUR-toJPY rate
-                    amount *= eurToJpyRate;
                     // Jump out of switch case here
                     break;
 
@@ -223,6 +236,7 @@ namespace Wk4Ex1_CurrencyConversion
                 case 2: // fromCurrency = EUR ; toCurrency is JPY
                     // multiply amount(EUR) by EUR-toJPY rate
                     amount *= eurToJpyRate;
+                    
                     // Jump out of switch case here
                     break;
 
@@ -232,6 +246,7 @@ namespace Wk4Ex1_CurrencyConversion
                 case 3: // fromCurrency = JPY ; toCurrency is JPY
                     // keep JPY the same
                     amount *= 1;
+                    
                     // Jump out of switch case here
                     break;
 
@@ -241,6 +256,7 @@ namespace Wk4Ex1_CurrencyConversion
                 default:
                     // output the error message
                     Console.WriteLine(errorMessage);
+                    
                     // Jump out of switch case here
                     break;
             }
@@ -274,6 +290,8 @@ namespace Wk4Ex1_CurrencyConversion
             {
                 // Output the choices and their number values
                 Console.WriteLine("Select the currency of your input amount:");
+            
+                
                 // Output to tell the user they can type 1 for USD
                 Console.WriteLine("1. United States Dollar (USD)");
                 // Output to tell the user they can type 2 for EUR
@@ -281,14 +299,17 @@ namespace Wk4Ex1_CurrencyConversion
                 // Output to tell the user they can type 3 for JPY
                 Console.WriteLine("3. Japanese Yen (JPY)");
 
+
                 // Call the try catch in the Interger Conversion module
                 startCurrency = HandleIntInput("Your starting currency is (1-3): ", "An error occured. Please ensure you enter a valid whole number.");
+
 
                 // If the selection isn't between 1 and 3, change the input back to the while evaluation number to have them try again
                 if (!(startCurrency >= 1 && startCurrency <= 3))
                 {
                     // output a message to prompt user to re-enter the value as a number from 1 to 3
                     Console.WriteLine("Please input a value between 1 and 3.");
+                
                     // set selection to the max integer value
                     startCurrency = Int32.MaxValue;
                 }
@@ -342,6 +363,7 @@ namespace Wk4Ex1_CurrencyConversion
                     convertedAmount = ConvertToUSD(amount, startCurrency);
                     // Output the converted value
                     Console.WriteLine($"The converted amount is {convertedAmount:C2}.");
+
                     // Jump out of switch here.
                     break;
 
@@ -354,6 +376,7 @@ namespace Wk4Ex1_CurrencyConversion
                     convertedAmount = ConvertToEUR(amount, startCurrency);
                     // Output the converted value
                     Console.WriteLine($"The converted amount is {convertedAmount:C2}.");
+                    
                     // Jump out of switch here.
                     break;
 
@@ -366,6 +389,7 @@ namespace Wk4Ex1_CurrencyConversion
                     convertedAmount = ConvertToJPY(amount, startCurrency);
                     // Output the converted value
                     Console.WriteLine($"The converted amount is {convertedAmount:C2}.");
+                    
                     // Jump out of switch here.
                     break;
 
@@ -373,12 +397,15 @@ namespace Wk4Ex1_CurrencyConversion
                 default:
                     // Output a polite message in case of unforseen error.
                     Console.WriteLine("It seems something went wrong on our end. Please close the program and try again.");
+                    
                     // Jump out of switch here.
                     break;
             }
 
+
             // Thank user for using the program
             Console.WriteLine("Thank you for using this currency conversion program! Come again!");
+
 
             // Pause at the end of program for user to read
             Console.ReadLine();
